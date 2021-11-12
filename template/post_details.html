@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="">
+    <div class="row">
+        <div class="col-3 ">
+            <h3 class="p-4">Category</h3>
+            <ul class="list-group list-group-flush">
+                {% for c in category %}
+                <li class="list-group-item "><a href="{% url 'category' c.title %}" class="link-info">{{ c.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <hr>
+            <h3 class="p-4">Popular Post</h3>
+            <ul class="list-group list-group-flush">
+                {% for p in popular_post %}
+                <li class="list-group-item "><a href="{% url 'post' p.url %}" class="link-primary">{{ p.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-9 bg-light p-5">
+            <div class="text-center">
+                <img src="{{ post.image.url }}" class="img-thumbnail rounded " alt=""  style="width: 60%;;">
+            </div>
+            <div class="container mt-4 border p-4 shadow rounded ">
+                <div class="row">
+                    <div class="col-8">
+                        <h2 class="display-4 text-dark">{{ post.title }}</h2>
+                        <p>{{post.created_date}}</p>
+                        <p>{{ post.content | safe }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
