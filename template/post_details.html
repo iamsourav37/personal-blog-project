@@ -24,18 +24,21 @@
         </div>
         <div class="col-9 bg-light p-5">
             <div class="text-center">
-                <img src="{{ post.image.url }}" class="img-thumbnail rounded " alt=""  style="width: 60%;;">
+                <img src="{{ post.image.url }}" class="img-thumbnail rounded " alt="" style="width: 60%;;">
             </div>
             <div class="container mt-4 border p-4 shadow rounded ">
-                <div class="row">
-                    <div class="col-8">
-                        <h2 class="display-4 text-dark">{{ post.title }}</h2>
-                        <p>{{post.created_date}}</p>
-                        <p>{{ post.content | safe }}</p>
-                    </div>
+                <div class="">
+                    <h2 class="display-3 text-dark text-center">{{ post.title }}</h2>
+                    <p class="text-secondary">{{post.created_date}}</p>
+
+                    <p class="p-2">{{ post.content | safe }}</p>
                 </div>
+
             </div>
+
         </div>
+
+
     </div>
 </div>
 

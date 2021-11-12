@@ -14,6 +14,8 @@ class CategoryAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     list_display = ("image_tag", "title", "likes", "created_date")
     list_display_links = ("image_tag", "title", "likes", "created_date")
+    list_per_page = 5
+
 
 
 
